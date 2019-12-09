@@ -21,13 +21,14 @@ void rmEvens(struct element **list) {
     if (list == NULL) {
         return;
     }
-    while (*list != NULL)
+    while (*list != NULL) {
         if ((*list)->value % 2 == 0) {
             struct element *temp = *list;   // Speicherbefreiung (1)
             *list = (*list)->next;
             free(temp);                     // Speicherbefreiung (2)
         } else {
             list = &(*list)->next;
+        }
     }
 }
 
